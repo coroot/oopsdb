@@ -1,0 +1,33 @@
+.card {
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 16px; /* Padding around the image */
+  margin: 16px 0 16px 0;
+  background-color: #fff; /* Optional: white background for contrast */
+  transition: transform 0.2s ease; /* Smooth zoom effect on hover */
+}
+
+.w-1200 {
+  max-width: min(100%, 1200px);
+}
+
+.w-800 {
+  max-width: min(100%, 800px);
+}
+
+.w-600 {
+  max-width: min(100%, 600px);
+}
+
+.horizontal-images {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 16px 0 16px 0;
+}
+
+.horizontal-images img {
+  width: 48%;
+  height: auto;
+}
