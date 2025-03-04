@@ -2,7 +2,7 @@
   border: 1px solid #ddd; /* Light gray border */
   border-radius: 4px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 16px; /* Padding around the image */
+  padding: 24px; /* Padding around the image */
   margin: 16px 0 16px 0;
   background-color: #fff; /* Optional: white background for contrast */
   transition: transform 0.2s ease; /* Smooth zoom effect on hover */

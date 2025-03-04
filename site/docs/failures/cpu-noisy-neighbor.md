@@ -5,7 +5,8 @@ hide_table_of_contents: true
 
 # CPU: noisy neighbor
 
-Let's run a CPU-intensive job on our cluster and see its impact on service performance.
+What happens when one workload takes up too much CPU in a Kubernetes cluster? 
+Let’s run a CPU-intensive job and see how it impacts our services.
 
 ## Deploying the CPU Stress Job
 
@@ -53,14 +54,16 @@ Next, let’s use Coroot to perform root cause analysis and explain these anomal
 
 ## Root Cause Analysis
 
-Here’s a summary of the AI-powered root cause analysis performed by Coroot.
+Here’s a summary of the AI-powered root cause analysis performed by [Coroot Enterprise Edition](https://coroot.com/editions/) (preview version).
 
-<img alt="problem propagation" src="/img/failures/cpu-noisy-neighbor/issue-propagation.png" class="card w-1200"/> 
+<div class="card w-1200">
+
+<img alt="problem propagation" src="/img/failures/cpu-noisy-neighbor/issue-propagation.png" class="w-1200"/> 
 
 ### Anomaly summary
 The frontend service is experiencing increased latency (up to 131ms median, 2.17s p95) and failed requests (up to 0.57 per second). The service's performance degradation is primarily manifested through elevated response times and connection issues.
 
-## Issue propagation paths
+### Issue propagation paths
 The issue propagates through the following path:
 
 * _frontend_ → _catalog_ → _odb-postgres_
@@ -85,7 +88,8 @@ The root cause appears to be high CPU utilization on _node103_, which is affecti
 
 ### Relevant charts
 
-<img alt="relevant charts" src="/img/failures/cpu-noisy-neighbor/relevant-charts.png" class="card w-1200"/> 
+<img alt="relevant charts" src="/img/failures/cpu-noisy-neighbor/relevant-charts.png" class="w-1200"/>
+</div>
 
 ## How it works
 
@@ -97,9 +101,10 @@ the system to pinpoint the root cause.
 * **Summarizing the Findings**: Once Coroot gathers all the details, it sends the context to an LLM, which generates a clear 
 summary and highlights the most important charts for faster troubleshooting.
 
-Here’s a detailed RCA report showing how Coroot analyzed this anomaly.
+Here’s a detailed RCA report showing how Coroot analyzed this anomaly. 
+It might look complex, but it’s useful as evidence, making it easy to cross-check the relevant anomalies.
 
-<img alt="detailed root cause analysis report" src="/img/failures/cpu-noisy-neighbor/detailed-rca-report.png" class="card w-1200"/> 
+<img alt="detailed root cause analysis report" src="/img/failures/cpu-noisy-neighbor/detailed-rca-report.png" class="card w-1200"/>
 
 ## Notes on CPU Scheduling in Linux and Kubernetes
 
