@@ -25,6 +25,7 @@ const config = {
   },
 
   scripts: [
+    {src: '/js/st.js'},
   ],
 
   presets: [
