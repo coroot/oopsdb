@@ -51,6 +51,11 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/social_image.jpg',
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+      },
+
       navbar: {
         title: '',
         logo: {
